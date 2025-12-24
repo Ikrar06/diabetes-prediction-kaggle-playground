@@ -1,23 +1,34 @@
-# Diabetes Prediction - Kaggle Challenge
+# Diabetes Prediction - Kaggle Playground
 
-Playground Series Season 5 Episode 12
+Kaggle Playground Series Season 5 Episode 12
 
-## Overview
+## Results
 
-Predicting diabetes diagnosis probability using clinical and demographic features.
-- Metric: ROC AUC
-- Target: 0.726-0.730 ROC AUC
+- **Current LB Score:** 0.70322
+- **Target:** 0.706+
 
-## Project Structure
+## Key Strategy
 
-```
-diabetesprediction/
-├── data/                   # Dataset files
-├── notebooks/              # Analysis notebooks
-├── src/                    # Source code
-├── submissions/            # Submission files
-└── models/                 # Saved models
-```
+1. **Distribution Shift Detection**
+   - Cutoff ID: 678,260 (using rolling mean analysis)
+   - Last 21,740 samples match test distribution
+
+2. **Original Dataset Features**
+   - 48 features from diabetes health indicators dataset
+   - Mean and count statistics for domain knowledge transfer
+
+3. **Weighted Refit**
+   - Weight = 15 on test-like samples
+   - Proven improvement: +0.003 to +0.004
+
+4. **Ensemble Methods**
+   - XGBoost + LightGBM
+   - Optimized weights via scipy
+
+## Notebooks
+
+- `cutoff_weighted.ipynb` - Main solution (LB 0.70322)
+- `ultimate_0706.ipynb` - Advanced stacking approach (target 0.706+)
 
 ## Setup
 
@@ -27,21 +38,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Methodology
+## Tech Stack
 
-1. Exploratory Data Analysis
-2. Feature Engineering (medical ratios, interactions)
-3. Model Training (XGBoost, CatBoost)
-4. Ensemble & Calibration
-
-## Key Finding
-
-Train-test distribution shift detected in last 22k samples. Weighted refit strategy provides significant improvement.
-
-## Results
-
-Work in progress.
-
-## Technologies
-
-Python, pandas, scikit-learn, XGBoost, CatBoost
+Python, pandas, numpy, scikit-learn, XGBoost, LightGBM
