@@ -1,0 +1,70 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Data Files (TOO LARGE for GitHub)
+data/train.csv
+data/test.csv
+data/sample_submission.csv
+
+# Submissions (can be large)
+submissions/*.csv
+
+# Saved Models (can be very large)
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+models/*.pth
+models/*.ckpt
+models/*.model
+models/*.bin
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Logs
+*.log
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Optuna
+optuna_study.db
+
+# Temporary files
+*.tmp
+*.bak
+.~*
