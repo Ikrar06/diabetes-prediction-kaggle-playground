@@ -41,3 +41,7 @@ pip install -r requirements.txt
 ## Tech Stack
 
 Python, pandas, numpy, scikit-learn, XGBoost, LightGBM
+
+## Author
+
+[Kaggle Profile](https://www.kaggle.com/gemzyy)
